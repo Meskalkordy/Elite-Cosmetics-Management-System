@@ -36,6 +36,5 @@ Following Eng. Belal's instructions, we are working step-by-step using **Sprints
 * Susan Sameh Qassem
 * Shrooq Hassan Musa
 * Lama Mahmoud Ruwaished
-* Nour Samir Zaqout
 
 **Supervised by:** Eng. Belal Abu Shawish .
