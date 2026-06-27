@@ -11,17 +11,17 @@ use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes (Public Presentation)
 |--------------------------------------------------------------------------
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [HomeController::class, 'about']);
-Route::get('/features', [HomeController::class, 'features']);
-Route::get('/team', [HomeController::class, 'team']);
+
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/features', [HomeController::class, 'features'])->name('features');
+Route::get('/team', [HomeController::class, 'team'])->name('team');
 
 /*
 |--------------------------------------------------------------------------
@@ -82,11 +82,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     */
     Route::resource('suppliers', SupplierController::class);
 
-});
-     Route::get('/settings', function(){
-    return view('settings');
-})->name('settings');
+    /*
+    | Settings
+    */
+    Route::get('/settings', function(){
+        return view('settings');
+    })->name('settings');
 
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -94,4 +97,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
 |--------------------------------------------------------------------------
 */
 require __DIR__.'/auth.php';
-
